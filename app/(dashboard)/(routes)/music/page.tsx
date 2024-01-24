@@ -98,9 +98,11 @@ const MusicPage = () => {
                     {!music && !loading && (
                         <Empty label="No music started" />
                     )}
-                    <div className="flex flex-col-reverse gap-y-4">
-                        Music will be generated here
-                    </div>
+                    {music && (
+                        <audio controls className="w-full mt-8">
+                            <source src={music} />
+                        </audio>
+                    )}
                 </div>
             </div>
         </div>
