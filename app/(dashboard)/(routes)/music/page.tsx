@@ -37,7 +37,7 @@ const MusicPage = () => {
             const response = await axios.post("/api/music", values);
             setMusic(response.data.audio);
             form.reset();
-        } catch (error) {
+        } catch (error: any) {
             if (error?.response?.status === 403) {
                 proModal.onOpen();
             } else {

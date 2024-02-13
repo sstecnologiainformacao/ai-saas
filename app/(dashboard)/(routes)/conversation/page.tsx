@@ -50,7 +50,7 @@ const Conversation = () => {
             setMessages((current) => [...current, userMessage, response.data]);
 
             form.reset();
-        } catch (error) {
+        } catch (error: any) {
             if (error?.response?.status === 403) {
                 proModal.onOpen();
             } else {
